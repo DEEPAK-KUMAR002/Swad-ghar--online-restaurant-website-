@@ -1,5 +1,7 @@
 # 🍽️ Swad Ghar - Online Restaurant Website
 
+🚀 **Live Deployment**: [https://swad-ghar-online-restaurant-website.onrender.com](https://swad-ghar-online-restaurant-website.onrender.com)
+
 **Swad Ghar** is a premium, state-of-the-art online restaurant website featuring multi-branch selection, real-time proximity-based sorting, dynamic menu rendering, dine-in table reservations, and an interactive conversational AI shopping assistant (JioMart-style chatbot).
 
 The application is powered by a robust **Spring Boot** Java backend and a modern, responsive HTML/CSS/JS frontend.
