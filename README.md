@@ -2,7 +2,7 @@
 
 🚀 **Live Deployment**: [https://swad-ghar-online-restaurant-website.onrender.com](https://swad-ghar-online-restaurant-website.onrender.com)
 
-**Swad Ghar** is a premium, state-of-the-art online restaurant website featuring multi-branch selection, real-time proximity-based sorting, dynamic menu rendering, dine-in table reservations, and an interactive conversational AI shopping assistant (JioMart-style chatbot).
+**Swad Ghar** is a premium, state-of-the-art online restaurant website featuring multi-branch selection, real-time proximity-based sorting, dynamic menu rendering, dine-in table reservations, and an interactive conversational AI shopping assistant.
 
 The application is powered by a robust **Spring Boot** Java backend and a modern, responsive HTML/CSS/JS frontend.
 
@@ -10,7 +10,7 @@ The application is powered by a robust **Spring Boot** Java backend and a modern
 
 ## ✨ Key Features
 
-### 💬 JioMart-Style Conversational AI Chatbot
+### 💬  Conversational AI Chatbot
 - **AI Item Search**: Query food items (e.g., `"search pizza"`, `"find samosa"`) to receive matching interactive product cards with direct `+ Add` buttons inside the chat bubble.
 - **Conversational Add to Cart**: Type `"add Margherita Pizza"` or `"buy samosa"` to automatically add items to your shopping cart.
 - **Cart Summary**: Type `"cart"` or `"basket"` to view an itemized list of your added meals, quantity, subtotal, and total in Indian Rupees (₹).
