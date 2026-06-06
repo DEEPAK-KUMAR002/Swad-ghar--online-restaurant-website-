@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swad Ghar Admin Panel | Order Management</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/562/562678.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i class="fas fa-utensils"></i> Swad Ghar <span>Admin</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="active"><i class="fas fa-shopping-bag"></i> Orders Panel</a>
+                <a href="rider.html"><i class="fas fa-shipping-fast"></i> Rider Panel</a>
+                <a href="index.html"><i class="fas fa-external-link-alt"></i> Store Front</a>
+                <a href="h2-console"><i class="fas fa-database"></i> SQL Browser</a>
+            </nav>
+            <div class="sidebar-footer">
+                <p>System Version 1.1.0</p>
+                <span class="status-indicator-active">Online</span>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="admin-header">
+                <div class="header-info">
+                    <h1>Orders Dashboard</h1>
+                    <p>Manage customer orders, track payments, and update delivery status in real-time.</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-refresh" id="btn-refresh" title="Refresh Data"><i class="fas fa-sync-alt"></i> Refresh</button>
+                </div>
+            </header>
+
+            <!-- Metrics Summary Section -->
+            <section class="metrics-grid">
+                <!-- Stat Card 1 -->
+                <div class="metric-card glass">
+                    <div class="metric-icon bg-orange">
+                        <i class="fas fa-receipt"></i>
+                    </div>
+                    <div class="metric-details">
+                        <h3 id="stat-total-orders">0</h3>
+                        <p>Total Orders</p>
+                    </div>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div class="metric-card glass">
+                    <div class="metric-icon bg-green">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <div class="metric-details">
+                        <h3 id="stat-total-revenue">₹0.00</h3>
+                        <p>Total Revenue</p>
+                    </div>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div class="metric-card glass">
+                    <div class="metric-icon bg-blue">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <div class="metric-details">
+                        <h3 id="stat-pending-deliveries">0</h3>
+                        <p>Active Deliveries</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orders Table Section -->
+            <section class="orders-table-container glass">
+                <div class="section-header">
+                    <h2>Recent Transacted Orders</h2>
+                    <span class="badge-count" id="orders-count-badge">0 orders</span>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order Ref</th>
+                                <th>Date/Time</th>
+                                <th>Customer Details</th>
+                                <th>Ordered Items</th>
+                                <th>Total Price</th>
+                                <th>Payment</th>
+                                <th>Delivery Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-table-body">
+                            <!-- Injected dynamically by admin.js -->
+                            <tr>
+                                <td colspan="7" class="loading-state">
+                                    <i class="fas fa-spinner fa-spin"></i> Loading latest orders...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script Links -->
+    <script src="admin.js"></script>
+</body>
+</html>

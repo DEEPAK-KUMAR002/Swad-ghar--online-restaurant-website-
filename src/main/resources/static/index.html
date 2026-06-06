@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Indulge in gourmet dishes with Swad Ghar. Order gourmet burgers, wood-fired pizzas, salads, and desserts online for hot, fresh, and fast delivery.">
+    <title>Swad Ghar | Premium Food Ordering & Restaurant Experience</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/562/562678.png">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         Preloader Screen
+         ========================================== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-loader"></div>
+            <div class="preloader-logo">
+                <i class="fas fa-utensils"></i> Gusto<span>Glow</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         Header & Navigation Bar
+         ========================================== -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <!-- Brand Logo -->
+            <a href="#" class="logo" id="logo-top">
+                <i class="fas fa-utensils"></i> Swad Ghar
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#offers" class="nav-link">Deals</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Actions Panel -->
+            <div class="nav-actions">
+                <!-- Search Bar Toggle -->
+                <div class="search-box">
+                    <div class="search-input-wrapper" id="search-input-wrapper">
+                        <input type="text" id="nav-search-input" placeholder="Search delicious bites...">
+                    </div>
+                    <button class="nav-btn" id="search-btn" title="Search Menu" aria-label="Search">
+                        <i class="fas fa-search" id="search-icon"></i>
+                    </button>
+                </div>
+
+                <!-- Dark Mode Toggle -->
+                <button class="nav-btn" id="theme-btn" title="Toggle Theme" aria-label="Theme toggle">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+
+                <!-- Order History -->
+                <button class="nav-btn" id="history-btn" title="Order History" aria-label="Order history">
+                    <i class="fas fa-history"></i>
+                </button>
+
+                <!-- Cart Icon with Badge -->
+                <div class="cart-icon-wrapper">
+                    <button class="nav-btn" id="cart-btn" title="Open Cart" aria-label="Open cart">
+                        <i class="fas fa-shopping-basket"></i>
+                    </button>
+                    <span class="cart-badge" id="cart-badge-count">0</span>
+                </div>
+
+                <!-- User Profile / Login -->
+                <div class="user-profile-wrapper">
+                    <button class="nav-btn" id="login-nav-btn" title="Sign In" aria-label="Customer portal">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <div class="profile-dropdown" id="profile-dropdown">
+                        <div class="dropdown-header">
+                            <span class="dropdown-name" id="user-display-name">Guest User</span>
+                            <span class="dropdown-email" id="user-display-email">guest@example.com</span>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item" id="btn-dropdown-history"><i class="fas fa-receipt"></i> My Orders</a>
+                        <a href="#" class="dropdown-item" id="btn-dropdown-profile"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                        <a href="#" class="dropdown-item" id="btn-dropdown-logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-toggle nav-btn" id="mobile-toggle" title="Menu toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars" id="toggle-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         Hero Section with Carousel Slider
+         ========================================== -->
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <!-- Left Info Panel -->
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-fire"></i> Hot & Fresh Delivery
+                </div>
+                <h1 class="hero-title">
+                    Crafting <span>Delicious</span> Moments, One Bite At A Time
+                </h1>
+                <p class="hero-desc">
+                    Experience gourmet dishes prepared by master chefs, delivered hot and fresh directly to your doorstep. Satisfy your cravings in just a few clicks!
+                </p>
+                <div class="hero-btns">
+                    <a href="#menu" class="btn btn-primary">
+                        <i class="fas fa-hamburger"></i> Order Now
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-calendar-alt"></i> Book Table
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>Unique Dishes</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4.9 <i class="fas fa-star" style="color: var(--accent); font-size: 0.9rem;"></i></h3>
+                        <p>12k+ Reviews</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>20 min</h3>
+                        <p>Fast Delivery</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Slider Showcase -->
+            <div class="hero-slider-container">
+                <div class="slider-bg-circle"></div>
+                
+                <!-- Slide 1: Burger -->
+                <div class="slide active" data-index="0">
+                    <div class="slide-image-wrapper">
+                        <img src="assets/hero_burger.png" alt="Signature Cheeseburger Deluxe">
+                        <div class="floating-badge badge-1">
+                            <i class="fas fa-fire-alt" style="color: #ff4757;"></i>
+                            <div class="badge-text">
+                                <h4>Hot & Sizzling</h4>
+                                <p>Double Cheddar Beef</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Pizza -->
+                <div class="slide" data-index="1">
+                    <div class="slide-image-wrapper">
+                        <img src="assets/hero_pizza.png" alt="Wood-fired Pepperoni Pizza">
+                        <div class="floating-badge badge-2">
+                            <i class="fas fa-pizza-slice" style="color: #ffa502;"></i>
+                            <div class="badge-text">
+                                <h4>Cheesy Perfection</h4>
+                                <p>Woodfired Pepperoni</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Dessert -->
+                <div class="slide" data-index="2">
+                    <div class="slide-image-wrapper">
+                        <img src="assets/hero_dessert.png" alt="Liquid Chocolate Lava Cake">
+                        <div class="floating-badge badge-1">
+                            <i class="fas fa-ice-cream" style="color: #ff6b81;"></i>
+                            <div class="badge-text">
+                                <h4>Sweet Cravings</h4>
+                                <p>Rich Chocolate Fudge</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Navigation Dots -->
+                <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Special Offers Section
+         ========================================== -->
+    <section class="offers" id="offers">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <span class="section-subtitle">Specials For Today</span>
+                <h2 class="section-title">Deals of the Week</h2>
+            </div>
+
+            <div class="offers-grid">
+                <!-- Offer Card 1 -->
+                <div class="offer-card offer-1">
+                    <div class="offer-card-overlay"></div>
+                    <div class="offer-content">
+                        <span class="offer-tag">Limited Offer</span>
+                        <h3>Double Stack Feast</h3>
+                        <p>Enjoy a whopping 50% discount on our double-decker cheese burgers today.</p>
+                    </div>
+                    <div class="offer-bottom">
+                        <a href="#menu" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;">Order Now</a>
+                        <div class="countdown-wrapper" id="timer-burger">
+                            <div class="countdown-box">
+                                <span class="hours">02</span>
+                                <label>Hrs</label>
+                            </div>
+                            <div class="countdown-box">
+                                <span class="minutes">45</span>
+                                <label>Mins</label>
+                            </div>
+                            <div class="countdown-box">
+                                <span class="seconds">30</span>
+                                <label>Secs</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Offer Card 2 -->
+                <div class="offer-card offer-2">
+                    <div class="offer-card-overlay"></div>
+                    <div class="offer-content">
+                        <span class="offer-tag">Pizza Festival</span>
+                        <h3>BOGO Pizza Fiesta</h3>
+                        <p>Buy any premium wood-fired pizza and get a classic Margherita absolutely free!</p>
+                    </div>
+                    <div class="offer-bottom">
+                        <a href="#menu" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;">Claim Deal</a>
+                        <div class="countdown-wrapper" id="timer-pizza">
+                            <div class="countdown-box">
+                                <span class="hours">04</span>
+                                <label>Hrs</label>
+                            </div>
+                            <div class="countdown-box">
+                                <span class="minutes">12</span>
+                                <label>Mins</label>
+                            </div>
+                            <div class="countdown-box">
+                                <span class="seconds">15</span>
+                                <label>Secs</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Dynamic Menu Grid & Filtering Section
+         ========================================== -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <span class="section-subtitle">Delicious Selection</span>
+                <h2 class="section-title">Explore Our Menu</h2>
+            </div>
+
+            <!-- Restaurant Selection Section -->
+            <div class="restaurant-selection-wrapper" style="margin-bottom: 40px; border-bottom: 1px dashed var(--border-color); padding-bottom: 40px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-wrap: wrap; gap: 15px;">
+                    <div>
+                        <h3 style="font-size: 1.4rem; font-weight: 700; margin: 0 0 5px 0;"><i class="fas fa-store" style="color: var(--accent);"></i> Nearest Branches</h3>
+                        <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Select a branch to view its exclusive culinary specials.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 0.88rem; font-weight: 600; color: var(--text-main);"><i class="fas fa-map-marker-alt" style="color: var(--accent);"></i> Delivery Area:</span>
+                        <select id="user-location-select" style="background: rgba(255, 255, 255, 0.9); border: 1px solid var(--border-color); color: var(--text-main); padding: 8px 16px; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 0.88rem; outline: none; cursor: pointer; box-shadow: var(--shadow);">
+                            <option value="Delhi">Delhi</option>
+                            <option value="Noida">Noida</option>
+                            <option value="Lucknow">Lucknow</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Pune">Pune</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Restaurant cards list -->
+                <div class="restaurants-grid" id="restaurants-grid">
+                    <!-- Javascript will inject restaurant cards here -->
+                </div>
+            </div>
+
+            <!-- Category Filters & Search Controls -->
+            <div class="menu-controls">
+                <div class="menu-tabs">
+                    <button class="tab-btn active" data-filter="all">All</button>
+                    <button class="tab-btn" data-filter="burgers">Burgers</button>
+                    <button class="tab-btn" data-filter="pizzas">Pizzas</button>
+                    <button class="tab-btn" data-filter="salads">Salads</button>
+                    <button class="tab-btn" data-filter="desi">Indian Desi</button>
+                    <button class="tab-btn" data-filter="chinese">Chinese</button>
+                    <button class="tab-btn" data-filter="desserts">Desserts</button>
+                    <button class="tab-btn" data-filter="drinks">Drinks</button>
+                </div>
+                <div class="menu-search">
+                    <input type="text" id="menu-search-input" placeholder="Search food items...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <!-- Menu Card Grid Container -->
+            <div class="menu-grid" id="menu-grid">
+                <!-- Javascript will inject cards dynamically here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         About Restaurant Section
+         ========================================== -->
+    <section class="about" id="about">
+        <div class="container about-grid">
+            <!-- Left Side Image -->
+            <div class="about-img-wrapper">
+                <div class="about-img-frame">
+                    <img src="assets/restaurant_about.png" alt="Chef preparing signature recipe">
+                </div>
+                <div class="about-experience-badge">
+                    <h3>12+</h3>
+                    <p>Years of Culinary Excellence</p>
+                </div>
+            </div>
+
+            <!-- Right Side Info -->
+            <div class="about-content">
+                <span class="section-subtitle">Our Story</span>
+                <h2>We Serve Passion, Quality, And Pure Flavor</h2>
+                <p class="about-text">
+                    Founded in 2014, Swad Ghar was created out of a simple love for clean, nutritious, and incredibly flavorful dining. Every dish is a labor of love, combined with years of rigorous professional training. 
+                </p>
+                <p class="about-text" style="margin-top: -15px; margin-bottom: 35px;">
+                    We carefully inspect and source all ingredients daily from certified local organic farms. Our mission is to transform simple, local crops and fresh meats into magical culinary plates that bring smiles.
+                </p>
+
+                <!-- Feature Grid -->
+                <div class="about-features">
+                    <div class="about-feature-item">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="about-feature-info">
+                            <h4>Fresh & Organic</h4>
+                            <p>100% locally sourced items</p>
+                        </div>
+                    </div>
+                    <div class="about-feature-item">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="about-feature-info">
+                            <h4>Award Winning Chef</h4>
+                            <p>Curated by professional masters</p>
+                        </div>
+                    </div>
+                    <div class="about-feature-item">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="about-feature-info">
+                            <h4>Fastest Delivery</h4>
+                            <p>Within 20-30 mins max</p>
+                        </div>
+                    </div>
+                    <div class="about-feature-item">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <div class="about-feature-info">
+                            <h4>Strictly Hygienic</h4>
+                            <p>Highest industry safety standards</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#contact" class="btn btn-primary">Read Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Customer Reviews / Testimonials Section
+         ========================================== -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <span class="section-subtitle">Testimonials</span>
+                <h2 class="section-title">What Our Guests Say</h2>
+            </div>
+
+            <div class="reviews-slider-container">
+                <div class="reviews-wrapper" id="reviews-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">
+                                "The cheeseburger here is honestly the best I've ever had in the city. The patty is extremely juicy, the bun is toasted to absolute perfection, and it arrived blazing hot in less than 20 minutes! Simply incredible."
+                            </p>
+                            <div class="review-user">
+                                <div class="review-user-img">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Liam Parker">
+                                </div>
+                                <div class="review-user-info">
+                                    <h4>Liam Parker</h4>
+                                    <p>Food Blogger</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="review-text">
+                                "I order the avocado salad and mojitos every single Friday. The greens are always crisp and fresh, never soggy. You can taste the quality and chef's dedication in every single bite. Highly recommended!"
+                            </p>
+                            <div class="review-user">
+                                <div class="review-user-img">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Sophia Miller">
+                                </div>
+                                <div class="review-user-info">
+                                    <h4>Sophia Miller</h4>
+                                    <p>Nutritionist</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">
+                                "Their chocolate lava cake is an absolute masterpiece! Liquid fudge just erupts on your spoon. The ordering process was seamless, and their website is very snappy and beautiful to navigate."
+                            </p>
+                            <div class="review-user">
+                                <div class="review-user-img">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Jackson Cooper">
+                                </div>
+                                <div class="review-user-info">
+                                    <h4>Jackson Cooper</h4>
+                                    <p>Tech Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button class="reviews-nav-btn reviews-btn-prev" id="reviews-prev" title="Previous review" aria-label="Previous review">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="reviews-nav-btn reviews-btn-next" id="reviews-next" title="Next review" aria-label="Next review">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Contact & Reservation Section
+         ========================================== -->
+    <section class="contact" id="contact">
+        <div class="container contact-grid">
+            <!-- Left Panel Details -->
+            <div class="contact-info">
+                <div>
+                    <span class="section-subtitle">Reach Out</span>
+                    <h2>Have Questions? We'd Love To Hear From You</h2>
+                </div>
+                <p>
+                    Whether you are planning a grand corporate event, wishing to make table reservations, or inquiring about allergy specifics in our menu, send us a query and we will revert back within 2 hours.
+                </p>
+                <div class="contact-details">
+                    <!-- Item 1 -->
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-detail-info">
+                            <h4>Direct Call</h4>
+                            <p>+91 8076437688</p>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-detail-info">
+                            <h4>Support Email</h4>
+                            <p>deepakmahta858@gmail.com</p>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-detail-info">
+                            <h4>Our Kitchen</h4>
+                            <p>482 Gourmet Boulevard, Culinary District, NY 10013</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel Validated Form -->
+            <div class="contact-form-wrapper">
+                <form id="contact-form" novalidate>
+                    <div class="form-group" id="group-name">
+                        <input type="text" id="contact-name" placeholder="Your Name" required>
+                        <span class="error-message">Name is required (at least 2 characters)</span>
+                    </div>
+                    <div class="form-group" id="group-email">
+                        <input type="email" id="contact-email" placeholder="Your Email Address" required>
+                        <span class="error-message">Please enter a valid email address</span>
+                    </div>
+                    <div class="form-group" id="group-phone">
+                        <input type="tel" id="contact-phone" placeholder="Phone Number (e.g. 10 digits)" required>
+                        <span class="error-message">Please enter a valid 10-digit phone number</span>
+                    </div>
+                    <div class="form-group" id="group-subject">
+                        <input type="text" id="contact-subject" placeholder="Subject / Table Booking / Query" required>
+                        <span class="error-message">Subject is required</span>
+                    </div>
+                    <div class="form-group" id="group-message">
+                        <textarea id="contact-message" placeholder="Type your message here..." required></textarea>
+                        <span class="error-message">Message must be at least 10 characters long</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         Footer Component
+         ========================================== -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Column 1: About -->
+            <div class="footer-col footer-about">
+                <a href="#" class="footer-logo">Gusto<span>Glow</span></a>
+                <p>
+                    Bringing premium culinary experiences straight to your dining room. Exceptional ingredients, master recipes, and blazing delivery speeds.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#offers">Specials & Deals</a>
+                    <a href="#menu">Menu</a>
+                    <a href="#about">Our Story</a>
+                    <a href="#reviews">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+
+            <!-- Column 3: Hours -->
+            <div class="footer-col">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday:<br>10:00 AM - 11:00 PM</p>
+                <p>Saturday - Sunday:<br>09:00 AM - Midnight</p>
+                <p>Holidays:<br>11:00 AM - 09:00 PM</p>
+            </div>
+
+            <!-- Column 4: Newsletter -->
+            <div class="footer-col footer-newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive fresh vouchers, chef recipes, and discounts directly.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Your Email Address" required aria-label="Email Address">
+                    <button type="submit" title="Subscribe" aria-label="Subscribe"><i class="fas fa-chevron-right"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Swad Ghar Restaurant. All Rights Reserved. Crafted with passion.</p>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         Cart Sidebar Drawer
+         ========================================== -->
+    <div class="cart-drawer-overlay" id="cart-overlay">
+        <div class="cart-drawer">
+            <!-- Header -->
+            <div class="cart-header">
+                <h2>Your Food Basket</h2>
+                <button class="cart-close-btn" id="cart-close-btn" title="Close cart" aria-label="Close cart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Body items list -->
+            <div class="cart-body-content" id="cart-body">
+                <!-- Cart items or empty state injected by JS -->
+            </div>
+
+            <!-- Footer summary calculations -->
+            <div class="cart-footer">
+                <div class="cart-summary-row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">₹0.00</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>Delivery Charge</span>
+                    <span id="cart-delivery">₹40.00</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>Voucher Code</span>
+                    <span id="cart-discount" style="color: var(--success); font-weight: 600;">-₹0.00</span>
+                </div>
+                <div class="cart-summary-row total">
+                    <span>Grand Total</span>
+                    <span id="cart-total">₹0.00</span>
+                </div>
+                <button class="btn btn-primary checkout-btn" id="checkout-drawer-btn">
+                    <i class="fas fa-shopping-bag"></i> Checkout Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         Checkout Modal
+         ========================================== -->
+    <div class="modal-overlay" id="checkout-modal">
+         <div class="modal-box">
+             <div class="modal-header">
+                 <h3>Complete Order</h3>
+                 <button class="modal-close-btn" id="modal-close-btn" title="Close Checkout" aria-label="Close checkout">
+                     <i class="fas fa-times"></i>
+                 </button>
+             </div>
+             <div class="modal-body">
+                 <form id="checkout-form" novalidate>
+                      <!-- Order Type Selector -->
+                      <h4 style="font-family: 'Poppins', sans-serif; font-size: 1rem; margin-bottom: 12px; margin-top: 5px;">Order Type</h4>
+                      <div class="payment-options" style="margin-bottom: 15px;">
+                          <div>
+                              <input type="radio" name="order-type" id="type-delivery" class="order-type-radio" value="Delivery" checked>
+                              <label for="type-delivery" class="order-type-label">
+                                  <i class="fas fa-shipping-fast"></i>
+                                  Home Delivery
+                              </label>
+                          </div>
+                          <div>
+                              <input type="radio" name="order-type" id="type-dinein" class="order-type-radio" value="Dine-In">
+                              <label for="type-dinein" class="order-type-label">
+                                  <i class="fas fa-chair"></i>
+                                  Dine-In
+                              </label>
+                          </div>
+                      </div>
+
+                      <!-- Delivery Name -->
+                      <div class="form-group" id="checkout-group-name">
+                          <input type="text" id="checkout-name" placeholder="Receiver Name" required>
+                          <span class="error-message">Name is required</span>
+                      </div>
+
+                      <!-- Contact Phone -->
+                      <div class="form-group" id="checkout-group-phone">
+                          <input type="tel" id="checkout-phone" placeholder="Delivery Phone (e.g. 10 digits)" required>
+                          <span class="error-message">Please enter a valid 10-digit number</span>
+                      </div>
+
+                      <!-- Delivery Address -->
+                      <div class="form-group" id="checkout-group-address">
+                          <textarea id="checkout-address" placeholder="Full Delivery Address" required style="height: 80px;"></textarea>
+                          <span class="error-message">Delivery address is required</span>
+                      </div>
+
+                      <!-- Dine-In Details Container (Hidden by default) -->
+                      <div id="dinein-details-container" style="display: none; margin-bottom: 20px;">
+                          <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                              <!-- Table Selection -->
+                              <div class="form-group" style="flex: 1.2; margin-bottom: 0;">
+                                  <label for="checkout-table" style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); display: block; margin-bottom: 5px;">Select Table</label>
+                                  <select id="checkout-table" style="width: 100%; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: var(--border-radius-md); background: var(--bg-secondary); color: var(--text-main); font-family: 'Poppins', sans-serif; outline: none; height: 48px;">
+                                      <option value="Table 1">Table 1 (2 Seater)</option>
+                                      <option value="Table 2">Table 2 (2 Seater)</option>
+                                      <option value="Table 3">Table 3 (4 Seater)</option>
+                                      <option value="Table 4">Table 4 (4 Seater)</option>
+                                      <option value="Table 5">Table 5 (6 Seater)</option>
+                                      <option value="Table 6">Table 6 (8 Seater - Family)</option>
+                                      <option value="Table 7">Table 7 (Window Side)</option>
+                                      <option value="Table 8">Table 8 (Rooftop)</option>
+                                  </select>
+                              </div>
+                              <!-- Number of Guests -->
+                              <div class="form-group" style="flex: 0.8; margin-bottom: 0;">
+                                  <label for="checkout-guests" style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); display: block; margin-bottom: 5px;">Guests</label>
+                                  <input type="number" id="checkout-guests" min="1" max="15" value="2" style="width: 100%; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: var(--border-radius-md); background: var(--bg-secondary); color: var(--text-main); font-family: 'Poppins', sans-serif; outline: none; height: 48px;">
+                              </div>
+                          </div>
+                          <!-- Dine-In Time -->
+                          <div class="form-group" id="checkout-group-dinein-time" style="margin-bottom: 0;">
+                              <label for="checkout-dinein-time" style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); display: block; margin-bottom: 5px;">Dine-In Reservation Time</label>
+                              <input type="time" id="checkout-dinein-time" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: var(--border-radius-md); background: var(--bg-secondary); color: var(--text-main); font-family: 'Poppins', sans-serif; outline: none; height: 48px;">
+                              <span class="error-message">Please select a dine-in reservation time</span>
+                          </div>
+                      </div>
+
+                     <!-- Payment Selector -->
+                     <h4 style="font-family: 'Poppins', sans-serif; font-size: 1rem; margin-bottom: 12px;">Payment Method</h4>
+                     <div class="payment-options">
+                         <div>
+                             <input type="radio" name="payment" id="pay-cod" class="payment-radio" value="cod" checked>
+                             <label for="pay-cod" class="payment-label">
+                                 <i class="fas fa-money-bill-wave"></i>
+                                 Cash on Delivery
+                             </label>
+                         </div>
+                         <div>
+                             <input type="radio" name="payment" id="pay-card" class="payment-radio" value="card">
+                             <label for="pay-card" class="payment-label">
+                                 <i class="fas fa-credit-card"></i>
+                                 Card / Online
+                             </label>
+                         </div>
+                     </div>
+
+                     <button type="submit" class="btn btn-primary" style="width: 100%;">
+                         <i class="fas fa-check-circle"></i> Confirm Order (<span id="modal-total-amt">₹0.00</span>)
+                     </button>
+                 </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         Profile Settings Modal
+         ========================================== -->
+    <div class="modal-overlay" id="profile-modal">
+        <div class="modal-box" style="max-width: 450px; width: 90%;">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-cog" style="color: var(--accent);"></i> Profile Settings</h3>
+                <button class="modal-close-btn" id="profile-modal-close" title="Close Settings" aria-label="Close settings">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="profile-form" novalidate>
+                    <!-- Name -->
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="profile-name" style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); display: block; margin-bottom: 5px;">Full Name</label>
+                        <input type="text" id="profile-name" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: var(--border-radius-md); background: var(--bg-secondary); color: var(--text-main); font-family: 'Poppins', sans-serif; outline: none; height: 48px;">
+                    </div>
+                    <!-- Phone -->
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="profile-phone" style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); display: block; margin-bottom: 5px;">Phone Number</label>
+                        <input type="tel" id="profile-phone" required style="width: 100%; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: var(--border-radius-md); background: var(--bg-secondary); color: var(--text-main); font-family: 'Poppins', sans-serif; outline: none; height: 48px;">
+                    </div>
+                    <!-- Address -->
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        <label for="profile-address" style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); display: block; margin-bottom: 5px;">Delivery Address</label>
+                        <textarea id="profile-address" required style="width: 100%; height: 90px; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: var(--border-radius-md); background: var(--bg-secondary); color: var(--text-main); font-family: 'Poppins', sans-serif; outline: none; resize: none;"></textarea>
+                    </div>
+                    <!-- Submit -->
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         Order History Modal
+         ========================================== -->
+    <div class="modal-overlay" id="history-modal">
+        <div class="modal-box" style="max-width: 620px; width: 95%;">
+            <div class="modal-header">
+                <h3>Your Order History</h3>
+                <button class="modal-close-btn" id="history-close-btn" title="Close History" aria-label="Close history">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="history-modal-body" style="max-height: 420px; overflow-y: auto; padding: 25px;">
+                <!-- JavaScript will inject order history items here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         Customer Authentication Modal
+         ========================================== -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="modal-box" style="max-width: 440px; width: 95%;">
+            <div class="modal-header" style="border-bottom: none; padding-bottom: 0;">
+                <div class="auth-tabs">
+                    <button class="auth-tab-btn active" id="tab-login" onclick="switchAuthTab('login')">Login</button>
+                    <button class="auth-tab-btn" id="tab-register" onclick="switchAuthTab('register')">Sign Up</button>
+                </div>
+                <button class="modal-close-btn" id="auth-close-btn" title="Close Portal" aria-label="Close portal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" style="padding: 20px 30px 30px 30px; max-height: 65vh; overflow-y: auto;">
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form active">
+                    <h3 class="auth-title">Welcome Back!</h3>
+                    <p class="auth-subtitle">Sign in to track orders and save your delivery profile.</p>
+                    
+                    <div class="form-group" id="login-group-email">
+                        <label for="login-email">Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="login-email" placeholder="name@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" id="login-group-password">
+                        <label for="login-password">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="login-password" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary auth-submit-btn" style="width: 100%;">
+                        <i class="fas fa-sign-in-alt"></i> Sign In
+                    </button>
+                    <button type="button" class="btn test-fill-btn" id="btn-test-login-fill" style="width: 100%; margin-top: 10px; background: rgba(46, 213, 115, 0.1); color: var(--color-delivered); border: 1px dashed var(--color-delivered);">
+                        <i class="fas fa-magic"></i> Auto-fill Test Account
+                    </button>
+                </form>
+
+                <!-- Registration Form -->
+                <form id="register-form" class="auth-form">
+                    <h3 class="auth-title">Create Account</h3>
+                    <p class="auth-subtitle">Join Swad Ghar to enjoy personalized gourmet dining.</p>
+                    
+                    <div class="form-group" id="register-group-name">
+                        <label for="register-name">Full Name</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="register-name" placeholder="John Doe" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" id="register-group-email">
+                        <label for="register-email">Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="register-email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" id="register-group-phone">
+                        <label for="register-phone">Phone Number</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="register-phone" placeholder="10 Digit Number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" id="register-group-address">
+                        <label for="register-address">Delivery Address</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="register-address" placeholder="Flat, Street, Area" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" id="register-group-password">
+                        <label for="register-password">Password (min. 6 chars)</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="register-password" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary auth-submit-btn" style="width: 100%;">
+                        <i class="fas fa-user-plus"></i> Register
+                    </button>
+                    <button type="button" class="btn test-fill-btn" id="btn-test-register-fill" style="width: 100%; margin-top: 10px; background: rgba(30, 144, 255, 0.1); color: var(--color-delivering); border: 1px dashed var(--color-delivering);">
+                        <i class="fas fa-magic"></i> Auto-fill Test Data
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         Toast Notification Hub
+         ========================================== -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- ==========================================
+         AI Chatbot Floating Widget
+         ========================================== -->
+    <div class="chatbot-wrapper" id="chatbot-wrapper">
+        <!-- Chatbot Open Button (Floating Action Button) -->
+        <button class="chatbot-toggle-btn" id="chatbot-toggle-btn" title="Open Chatbot" aria-label="Open Chatbot">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-badge" id="chatbot-unread-badge">0</span>
+        </button>
+
+        <!-- Chatbot Window Container -->
+        <div class="chat-window" id="chat-window">
+            <!-- Header -->
+            <div class="chat-header">
+                <div class="chat-avatar-info">
+                    <div class="chat-avatar">
+                        <i class="fas fa-utensils"></i>
+                        <span class="avatar-status"></span>
+                    </div>
+                    <div class="chat-title-status">
+                        <h3>Swad Ghar AI Assistant</h3>
+                        <p>Ask about meals, hours & delivery!</p>
+                    </div>
+                </div>
+                <button class="chat-minimize-btn" id="chat-minimize-btn" title="Minimize Chat" aria-label="Minimize Chat">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+
+            <!-- Messages Box -->
+            <div class="chat-messages" id="chat-messages">
+                <!-- Javascript will render messages here -->
+            </div>
+
+            <!-- Quick Suggestion Action Pills -->
+            <div class="chat-suggestions-wrapper">
+                <div class="chat-suggestions" id="chat-suggestions">
+                    <button class="suggestion-pill" data-msg="Recommend Pizza">🍕 Suggest Pizza</button>
+                    <button class="suggestion-pill" data-msg="Recommend Burger">🍔 Suggest Burger</button>
+                    <button class="suggestion-pill" data-msg="Healthy Options">🥗 Healthy Options</button>
+                    <button class="suggestion-pill" data-msg="Today's Offers">🎉 Today's Offers</button>
+                    <button class="suggestion-pill" data-msg="Recommend Combo">🔥 Meal Combos</button>
+                    <button class="suggestion-pill" data-msg="File a Complaint">⚠️ File a Complaint</button>
+                </div>
+            </div>
+
+            <!-- Input Form Footer -->
+            <div class="chat-footer">
+                <form id="chat-input-form">
+                    <input type="text" id="chat-user-input" placeholder="Ask Swad Ghar anything..." autocomplete="off" required>
+                    <button type="submit" id="chat-send-btn" title="Send Message" aria-label="Send Message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link JavaScript Files -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

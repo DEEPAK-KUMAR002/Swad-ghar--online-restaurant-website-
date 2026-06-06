@@ -1,0 +1,6 @@
+target/
+data/
+.gemini/
+*.log
+*.class
+.DS_Store

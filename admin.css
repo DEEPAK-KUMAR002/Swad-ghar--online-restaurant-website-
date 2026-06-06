@@ -1,0 +1,507 @@
+/* ==========================================================================
+   Swad Ghar Admin Panel Styles
+   ========================================================================== */
+
+:root {
+    --bg-main: #f5f6fa;
+    --bg-sidebar: #1e2029;
+    --text-main: #2f3542;
+    --text-muted: #747d8c;
+    --accent: #ff4757;
+    --accent-glow: rgba(255, 71, 87, 0.25);
+    
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --border-color: rgba(226, 232, 240, 0.8);
+    
+    --color-preparing: #ffa502;
+    --color-ready: #ffd32a;
+    --color-delivering: #1e90ff;
+    --color-delivered: #2ed573;
+    
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+}
+
+/* Dark mode fallback variables */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Poppins', 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Dashboard Layout */
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    background-color: var(--bg-sidebar);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.sidebar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-brand i {
+    color: var(--accent);
+}
+
+.sidebar-brand span {
+    font-weight: 300;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.sidebar-nav a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--accent) 0%, #ff6b81 100%);
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+}
+
+.sidebar-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-indicator-active {
+    background-color: rgba(46, 213, 115, 0.15);
+    color: var(--color-delivered);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 260px;
+    flex-grow: 1;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+/* Glassmorphism Helper */
+.glass {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    border-radius: 20px;
+}
+
+/* Header */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.header-info h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    letter-spacing: -0.5px;
+}
+
+.header-info p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.btn-refresh {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.btn-refresh:hover {
+    background: var(--bg-sidebar);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.metric-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+}
+
+.metric-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.bg-orange {
+    background-color: rgba(255, 165, 2, 0.15);
+    color: var(--color-preparing);
+}
+
+.bg-green {
+    background-color: rgba(46, 213, 115, 0.15);
+    color: var(--color-delivered);
+}
+
+.bg-blue {
+    background-color: rgba(30, 144, 255, 0.15);
+    color: var(--color-delivering);
+}
+
+.metric-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.metric-details p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Orders Table Section */
+.orders-table-container {
+    padding: 30px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.badge-count {
+    background-color: rgba(30, 144, 255, 0.1);
+    color: var(--color-delivering);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.orders-table th {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 15px 18px;
+    border-bottom: 2px solid var(--border-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.orders-table td {
+    padding: 20px 18px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.93rem;
+    vertical-align: top;
+}
+
+.orders-table tr:last-child td {
+    border-bottom: none;
+}
+
+.order-code-ref {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.order-db-id {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 3px;
+}
+
+.customer-name {
+    font-weight: 600;
+    display: block;
+}
+
+.customer-meta {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+.customer-meta i {
+    width: 15px;
+    text-align: center;
+}
+
+/* Item details */
+.items-summary-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.items-summary-list li {
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+    color: var(--text-main);
+}
+
+.items-summary-list li span {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.order-total-price {
+    font-weight: 700;
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+.payment-method-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: var(--bg-main);
+    color: var(--text-muted);
+}
+
+/* Status control select styling */
+.status-select {
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.status-select.preparing {
+    border-color: var(--color-preparing);
+    color: var(--color-preparing);
+    background-color: rgba(255, 165, 2, 0.08);
+}
+
+.status-select.ready {
+    border-color: var(--color-ready);
+    color: #d1a100;
+    background-color: rgba(255, 211, 42, 0.08);
+}
+
+.status-select.delivering {
+    border-color: var(--color-delivering);
+    color: var(--color-delivering);
+    background-color: rgba(30, 144, 255, 0.08);
+}
+
+.status-select.delivered {
+    border-color: var(--color-delivered);
+    color: var(--color-delivered);
+    background-color: rgba(46, 213, 115, 0.08);
+}
+
+.status-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Loading & Empty states */
+.loading-state {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    padding: 60px !important;
+}
+
+.loading-state i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--accent);
+}
+
+/* Responsive breakpoint styling */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 80px;
+        padding: 30px 10px;
+    }
+    
+    .sidebar-brand span,
+    .sidebar-nav a span,
+    .sidebar-footer {
+        display: none;
+    }
+    
+    .sidebar-brand {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    
+    .sidebar-nav a {
+        justify-content: center;
+        padding: 15px;
+    }
+    
+    .main-content {
+        margin-left: 80px;
+        padding: 25px;
+    }
+}
+
+/* Status Action buttons and badge display overrides */
+.status-column-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+}
+
+.status-badge.placed {
+    border-color: var(--color-preparing);
+    color: var(--color-preparing);
+    background-color: rgba(255, 165, 2, 0.08);
+}
+
+.status-badge.accepted {
+    border-color: var(--color-ready);
+    color: #d1a100;
+    background-color: rgba(255, 211, 42, 0.08);
+}
+
+.status-badge.preparing {
+    border-color: var(--color-delivering);
+    color: var(--color-delivering);
+    background-color: rgba(30, 144, 255, 0.08);
+}
+
+.status-badge.ready-for-rider {
+    border-color: #706fd3;
+    color: #706fd3;
+    background-color: rgba(112, 111, 211, 0.08);
+}
+
+.status-badge.delivering {
+    border-color: var(--color-delivering);
+    color: var(--color-delivering);
+    background-color: rgba(30, 144, 255, 0.08);
+}
+
+.status-badge.delivered {
+    border-color: var(--color-delivered);
+    color: var(--color-delivered);
+    background-color: rgba(46, 213, 115, 0.08);
+}
+
+.btn-status-action {
+    background-color: var(--accent);
+    color: #ffffff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px var(--accent-glow);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}

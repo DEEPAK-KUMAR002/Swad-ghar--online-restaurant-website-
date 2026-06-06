@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swad Ghar Rider Portal | Delivery Management</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/562/562678.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Leaflet.js Map CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="rider.css">
+</head>
+<body>
+    <div class="rider-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i class="fas fa-utensils"></i> Swad Ghar <span>Rider</span>
+            </div>
+            <div class="rider-profile-container" style="margin-bottom: 30px;">
+                <label for="rider-select" style="font-size: 0.8rem; text-transform: uppercase; color: rgba(255, 255, 255, 0.4); font-weight: 600; display: block; margin-bottom: 8px;">Active Rider Profile</label>
+                <div class="rider-select-wrapper" style="position: relative;">
+                    <select id="rider-select" style="width: 100%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.15); padding: 10px 14px; border-radius: 10px; font-family: 'Poppins', sans-serif; font-size: 0.88rem; outline: none; cursor: pointer; transition: all 0.3s;">
+                        <option value="Vikas Kumar" style="background: #1e2029; color: #fff;">Vikas Kumar</option>
+                        <option value="Deepak Kumar" style="background: #1e2029; color: #fff;">Deepak Kumar</option>
+                        <option value="Aryan" style="background: #1e2029; color: #fff;">Aryan</option>
+                        <option value="Dhruv" style="background: #1e2029; color: #fff;">Dhruv</option>
+                        <option value="Rudra Raut" style="background: #1e2029; color: #fff;">Rudra Raut</option>
+                    </select>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin.html"><i class="fas fa-shopping-bag"></i> Orders Panel</a>
+                <a href="#" class="active"><i class="fas fa-shipping-fast"></i> Rider Portal</a>
+                <a href="index.html"><i class="fas fa-external-link-alt"></i> Store Front</a>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Delivery Ops v1.0</p>
+                <span class="status-indicator-active">On Duty</span>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="rider-header">
+                <div class="header-info">
+                    <h1>Rider Delivery Dashboard</h1>
+                    <p>Track ready orders, manage active pick-ups, and log successful deliveries.</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-refresh" id="btn-refresh" title="Refresh Deliveries"><i class="fas fa-sync-alt"></i> Sync Ops</button>
+                </div>
+            </header>
+
+            <!-- Metrics Summary Grid -->
+            <section class="metrics-grid">
+                <!-- Available Cards -->
+                <div class="metric-card glass">
+                    <div class="metric-icon bg-orange">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <div class="metric-details">
+                        <h3 id="stat-available-deliveries">0</h3>
+                        <p>Available Pick-ups</p>
+                    </div>
+                </div>
+
+                <!-- Active Cards -->
+                <div class="metric-card glass">
+                    <div class="metric-icon bg-blue">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <div class="metric-details">
+                        <h3 id="stat-active-deliveries">0</h3>
+                        <p>Active Deliveries</p>
+                    </div>
+                </div>
+
+                <!-- Completed Cards -->
+                <div class="metric-card glass">
+                    <div class="metric-icon bg-green">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <div class="metric-details">
+                        <h3 id="stat-completed-deliveries">0</h3>
+                        <p>Completed Deliveries</p>
+                    </div>
+                </div>
+
+                <!-- Earnings Cards -->
+                <div class="metric-card glass">
+                    <div class="metric-icon bg-green">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="metric-details">
+                        <h3 id="stat-total-earnings">₹0.00</h3>
+                        <p>Total Earnings (5%)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Deliveries Columns Layout -->
+            <div class="deliveries-columns">
+                <!-- Column 1: Available Pick-ups -->
+                <section class="delivery-column glass">
+                    <div class="column-header">
+                        <h2><i class="fas fa-box-open" style="color: var(--color-preparing);"></i> Available Pick-ups</h2>
+                        <span class="badge-count" id="count-available">0 available</span>
+                    </div>
+                    <div class="delivery-list" id="list-available">
+                        <!-- Loading State -->
+                        <div class="loading-state">
+                            <i class="fas fa-spinner fa-spin"></i> Checking for pick-ups...
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Column 2: My Active Deliveries -->
+                <section class="delivery-column glass">
+                    <div class="column-header">
+                        <h2><i class="fas fa-motorcycle" style="color: var(--color-delivering);"></i> My Active Deliveries</h2>
+                        <span class="badge-count" id="count-active" style="background-color: rgba(30, 144, 255, 0.1); color: var(--color-delivering);">0 active</span>
+                    </div>
+                    <div class="delivery-list" id="list-active">
+                        <div class="empty-state">
+                            <i class="fas fa-clipboard-check"></i>
+                            <p>No active deliveries. Accept an order on the left to start delivery!</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Column 3: My Completed Deliveries -->
+                <section class="delivery-column glass">
+                    <div class="column-header">
+                        <h2><i class="fas fa-check-double" style="color: var(--color-delivered);"></i> My Completed Deliveries</h2>
+                        <span class="badge-count" id="count-completed" style="background-color: rgba(46, 213, 115, 0.1); color: var(--color-delivered);">0 completed</span>
+                    </div>
+                    <div class="delivery-list" id="list-completed">
+                        <div class="empty-state">
+                            <i class="fas fa-history"></i>
+                            <p>No completed deliveries yet. Complete deliveries to see your history!</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Sound (Pleasant digital notification chime) -->
+    <audio id="chime-sound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-200.wav" preload="auto"></audio>
+
+    <!-- Slide-in Delivery Alert Toast -->
+    <div class="rider-alert-toast" id="rider-alert-toast">
+        <div class="alert-icon">
+            <i class="fas fa-bell animate-bell"></i>
+        </div>
+        <div class="alert-content">
+            <h4>New Delivery Alert!</h4>
+            <p id="alert-message">Order GUSTO-123456 is ready for pick-up.</p>
+        </div>
+        <button class="alert-close" id="alert-close" aria-label="Close notification"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- Map Navigation Modal -->
+    <div class="map-modal" id="map-modal">
+        <div class="map-modal-content glass">
+            <div class="map-modal-header">
+                <h3><i class="fas fa-map-marked-alt"></i> Delivery Navigation</h3>
+                <button class="map-modal-close" id="map-modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="map-modal-body" style="padding: 0; position: relative;">
+                <div id="map" style="height: 420px; width: 100%; position: relative; z-index: 1;"></div>
+                <div class="map-directions" id="map-directions">
+                    <strong>MDR120</strong>
+                    <span class="meta">1.0 km, 1 min 30 s</span>
+                    <ul>
+                        <li><i class="fas fa-arrow-down" style="color: #ff4757;"></i> Head south <span>150 m</span></li>
+                        <li><i class="fas fa-reply" style="color: #ffa502;"></i> Turn left onto MDR120 <span>800 m</span></li>
+                        <li><i class="fas fa-share" style="color: #1e90ff;"></i> Turn right <span>150 m</span></li>
+                        <li><i class="fas fa-map-marker-alt" style="color: #2ed573;"></i> Arrived at destination <span>0 m</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Links -->
+    <script src="rider.js"></script>
+</body>
+</html>
